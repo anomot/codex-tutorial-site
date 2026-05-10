@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:developers.openai.com)",
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "WebFetch(domain:openai.com)",
+      "WebFetch(domain:www.datacamp.com)",
+      "WebFetch(domain:thepromptshelf.dev)",
+      "WebFetch(domain:dev.to)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}
