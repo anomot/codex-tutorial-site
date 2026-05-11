@@ -8,31 +8,39 @@ import { TableOfContents } from "@/components/layout/toc";
 import { ProgressIndicator } from "@/components/content/progress-indicator";
 import { PromptBlock } from "@/components/content/prompt-block";
 import { LessonProgress } from "@/components/content/lesson-progress";
+import { getSectionTitle } from "@/lib/content/config";
 
-export function DocDetailPage({ doc, related, previous, next }: { doc: Doc; related: Doc[]; previous?: Doc | null; next?: Doc | null }) {
+export function DocDetailPage({ doc, related, previous, next, lessonTotal }: { doc: Doc; related: Doc[]; previous?: Doc | null; next?: Doc | null; lessonTotal?: number }) {
   return (
     <>
       <ProgressIndicator />
       <main className="mx-auto flex max-w-7xl gap-10 px-6 py-10 lg:px-8">
         <article className="min-w-0 flex-1">
-          <header className="mb-8 space-y-5">
+          <header className="mb-8 space-y-6">
             <div className="flex flex-wrap gap-2">
+              <Badge className="bg-primary/10 text-primary">{getSectionTitle(doc.section)}</Badge>
               {doc.tags.map((tag) => (
                 <Badge key={tag}>{tag}</Badge>
               ))}
             </div>
+
             <div className="space-y-3">
-              <h1 className="text-4xl font-bold tracking-tight">{doc.title}</h1>
+              <h1 className="text-4xl font-bold tracking-tight md:text-5xl">{doc.title}</h1>
+              <p className="max-w-3xl text-lg leading-8 text-muted-foreground">{doc.excerpt}</p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-start">
               <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                 <span>更新于 {formatDate(doc.updated)}</span>
                 <span>{doc.readingTime} 分钟阅读</span>
-                <span>{doc.section}</span>
+                <span>{doc.fileName}</span>
               </div>
+              {doc.section === "lessons" ? (
+                <LessonProgress slug={doc.slug} total={lessonTotal ?? 0} currentIndex={doc.order ?? 0} />
+              ) : null}
             </div>
-            {doc.section === "lessons" ? (
-              <LessonProgress slug={doc.slug} total={14} currentIndex={doc.order ?? 0} />
-            ) : null}
-            {doc.section === "prompts" && doc.promptTemplate ? <PromptBlock value={doc.promptTemplate} /> : null}
+
+            {doc.promptTemplate ? <PromptBlock value={doc.promptTemplate} /> : null}
           </header>
 
           <MarkdownRenderer content={doc.content} section={doc.section} />
@@ -77,3 +85,4 @@ export function DocDetailPage({ doc, related, previous, next }: { doc: Doc; rela
     </>
   );
 }
+

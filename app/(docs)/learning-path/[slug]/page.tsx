@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { DocDetailPage } from "@/components/content/doc-detail-page";
-import { getAdjacentLessons, getDocBySlug, getRelatedDocs } from "@/lib/content/queries";
+import { getAdjacentLessons, getDocBySlug, getDocsBySection, getRelatedDocs } from "@/lib/content/queries";
 
 export default async function LessonDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -8,5 +8,6 @@ export default async function LessonDetailPage({ params }: { params: Promise<{ s
   if (!doc) notFound();
   const related = await getRelatedDocs(doc);
   const adjacent = await getAdjacentLessons(slug);
-  return <DocDetailPage doc={doc} related={related} previous={adjacent.previous} next={adjacent.next} />;
+  const lessons = await getDocsBySection("lessons");
+  return <DocDetailPage doc={doc} related={related} previous={adjacent.previous} next={adjacent.next} lessonTotal={lessons.length} />;
 }
