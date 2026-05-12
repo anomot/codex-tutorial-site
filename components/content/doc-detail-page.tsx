@@ -14,8 +14,8 @@ export function DocDetailPage({ doc, related, previous, next, lessonTotal }: { d
   return (
     <>
       <ProgressIndicator />
-      <main className="mx-auto flex max-w-7xl gap-10 px-6 py-10 lg:px-8">
-        <article className="min-w-0 flex-1">
+      <main className="flex w-full gap-10 px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+        <article className="mx-auto min-w-0 max-w-4xl flex-1 2xl:mx-0">
           <header className="mb-8 space-y-6">
             <div className="flex flex-wrap gap-2">
               <Badge className="bg-primary/10 text-primary">{getSectionTitle(doc.section)}</Badge>
@@ -48,13 +48,13 @@ export function DocDetailPage({ doc, related, previous, next, lessonTotal }: { d
           {(previous || next) ? (
             <div className="mt-12 grid gap-4 md:grid-cols-2">
               {previous ? (
-                <Link href={previous.route} className="rounded-2xl border border-border p-4 hover:bg-secondary">
+                <Link href={previous.route} className="rounded-lg border border-border p-4 hover:bg-secondary">
                   <div className="text-xs text-muted-foreground">上一课</div>
                   <div className="mt-1 font-medium">{previous.title}</div>
                 </Link>
               ) : <div />}
               {next ? (
-                <Link href={next.route} className="rounded-2xl border border-border p-4 text-right hover:bg-secondary">
+                <Link href={next.route} className="rounded-lg border border-border p-4 text-right hover:bg-secondary">
                   <div className="text-xs text-muted-foreground">下一课</div>
                   <div className="mt-1 font-medium">{next.title}</div>
                 </Link>
@@ -85,4 +85,3 @@ export function DocDetailPage({ doc, related, previous, next, lessonTotal }: { d
     </>
   );
 }
-

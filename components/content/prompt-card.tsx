@@ -25,7 +25,7 @@ export function PromptCard({ doc }: { doc: Doc }) {
       </CardHeader>
       <CardContent className="space-y-5">
         {doc.promptTemplate ? (
-          <div className="rounded-2xl border border-border/70 bg-secondary/40 p-3">
+          <div className="rounded-lg border border-border/70 bg-secondary/40 p-3">
             <div className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">模板预览</div>
             <div className="max-h-40 overflow-hidden text-sm leading-6 text-foreground whitespace-pre-wrap">{doc.promptTemplate}</div>
           </div>

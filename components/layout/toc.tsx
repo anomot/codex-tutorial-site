@@ -30,8 +30,8 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
   if (!headings.length) return null;
 
   return (
-    <aside className="hidden xl:block xl:w-64 xl:shrink-0">
-      <div className="sticky top-24 rounded-2xl border border-border/70 bg-card p-4">
+    <aside className="hidden 2xl:block 2xl:w-64 2xl:shrink-0">
+      <div className="sticky top-24 rounded-lg border border-border/70 bg-card p-4">
         <div className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">目录</div>
         <div className="space-y-2 text-sm">
           {headings.map((heading) => {

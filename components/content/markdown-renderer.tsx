@@ -30,7 +30,7 @@ export function MarkdownRenderer({ content, section }: { content: string; sectio
             return <CodeBlock code={code} language={language} />;
           },
           blockquote({ children }) {
-            return <blockquote className="not-prose my-6 rounded-2xl border border-border/70 bg-secondary/40 px-5 py-4 text-sm leading-7 text-foreground">{children}</blockquote>;
+            return <blockquote className="not-prose my-6 rounded-lg border border-border/70 bg-secondary/40 px-5 py-4 text-sm leading-7 text-foreground">{children}</blockquote>;
           },
           ol({ children }) {
             return <ol className="space-y-3 pl-0">{children}</ol>;

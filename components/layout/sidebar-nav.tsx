@@ -10,7 +10,7 @@ export function SidebarNav({ groups }: { groups: SidebarGroup[] }) {
 
   return (
     <aside className="hidden w-72 shrink-0 border-r border-border/70 lg:block">
-      <div className="sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto px-4 py-6">
+      <div className="sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto px-4 py-8">
         {groups.map((group) => (
           <div key={group.title} className="mb-8 last:mb-0">
             <div className="mb-3 px-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
@@ -24,7 +24,7 @@ export function SidebarNav({ groups }: { groups: SidebarGroup[] }) {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "block rounded-lg px-3 py-2 text-sm transition-colors hover:bg-secondary",
+                      "block rounded-md px-3 py-2 text-sm leading-6 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
                       active && "bg-secondary text-foreground",
                     )}
                   >

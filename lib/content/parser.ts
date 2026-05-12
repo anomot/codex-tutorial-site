@@ -69,6 +69,7 @@ export async function parseDoc(section: ContentSection, absolutePath: string): P
   const updated = typeof data.updated === "string" ? data.updated : "";
   const type = typeof data.type === "string" ? data.type : section;
   const tags = Array.isArray(data.tags) ? data.tags.map(String) : [];
+  const excerpt = typeof data.excerpt === "string" ? data.excerpt : excerptFromContent(content);
   const order = extractOrder(section, fileName);
 
   return {
@@ -81,7 +82,7 @@ export async function parseDoc(section: ContentSection, absolutePath: string): P
     route: routeForDoc(section, slug),
     sourcePath: absolutePath,
     fileName,
-    excerpt: excerptFromContent(content),
+    excerpt,
     readingTime: readingTimeFromText(content),
     content,
     headings: extractHeadings(content),

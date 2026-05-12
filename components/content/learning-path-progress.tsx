@@ -15,7 +15,7 @@ export function LearningPathProgress({ total }: { total: number }) {
   }, []);
 
   return (
-    <div className="rounded-2xl border border-border/70 bg-card p-4 text-sm text-muted-foreground">
+    <div className="rounded-lg border border-border/70 bg-card p-4 text-sm text-muted-foreground">
       当前已完成 {count} / {total} 节课
     </div>
   );

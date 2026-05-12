@@ -15,7 +15,7 @@ export function MobileNav() {
         <Menu className="h-5 w-5" />
       </Button>
       {open ? (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-background/95 backdrop-blur sm:hidden">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-background/95 backdrop-blur lg:hidden">
           <div className="flex items-center justify-between border-b px-4 py-4">
             <div className="font-semibold">导航</div>
             <Button variant="ghost" size="icon" onClick={() => setOpen(false)}>

@@ -2,7 +2,7 @@ import { CopyButton } from "@/components/content/copy-button";
 
 export function PromptBlock({ value }: { value: string }) {
   return (
-    <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4">
+    <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
       <div className="mb-3 flex items-center justify-between gap-3">
         <div>
           <div className="text-sm font-semibold">Prompt 模板</div>

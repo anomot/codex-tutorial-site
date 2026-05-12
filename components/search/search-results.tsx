@@ -4,7 +4,7 @@ import type { Doc } from "@/lib/content/types";
 
 export function SearchResults({ query, results }: { query: string; results: Doc[] }) {
   return (
-    <main className="mx-auto max-w-6xl px-6 py-10 lg:px-8">
+    <main className="w-full px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
       <div className="mb-8 space-y-4">
         <h1 className="text-4xl font-bold tracking-tight">搜索</h1>
         <p className="max-w-3xl text-muted-foreground">
@@ -21,7 +21,7 @@ export function SearchResults({ query, results }: { query: string; results: Doc[
           ))}
         </div>
       ) : (
-        <div className="rounded-2xl border border-border p-6 text-muted-foreground">没有找到相关内容。</div>
+        <div className="rounded-lg border border-border p-6 text-muted-foreground">没有找到相关内容。</div>
       )}
     </main>
   );

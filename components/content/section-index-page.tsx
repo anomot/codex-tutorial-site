@@ -8,7 +8,7 @@ import { SectionPageHeader } from "@/components/content/section-page-header";
 
 export function SectionIndexPage({ title, description, docs, section }: { title: string; description: string; docs: Doc[]; section: ContentSection }) {
   return (
-    <main className="mx-auto max-w-6xl px-6 py-10 lg:px-8">
+    <main className="w-full px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
       <div className="mb-10 space-y-4">
         <SectionPageHeader title={title} description={description} count={docs.length} />
         {section === "lessons" ? <LearningPathProgress total={docs.length} /> : null}
@@ -19,13 +19,13 @@ export function SectionIndexPage({ title, description, docs, section }: { title:
       ) : section === "research" ? (
         <ResourceList docs={docs} />
       ) : section === "prompts" ? (
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {docs.map((doc) => (
             <PromptCard key={doc.slug} doc={doc} />
           ))}
         </div>
       ) : (
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {docs.map((doc) => (
             <DocCard key={doc.slug} doc={doc} />
           ))}

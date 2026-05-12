@@ -2,7 +2,7 @@
 title: Codex Prompt Patterns
 type: wiki
 slug: codex-prompt-patterns
-updated: 2026-05-10
+updated: 2026-05-12
 tags: [codex, prompts, examples, validation]
 ---
 
@@ -19,6 +19,7 @@ tags: [codex, prompts, examples, validation]
 # 可复用知识
 - 每个模板都要包含：目标、限制、文件、验证、完成标准。
 - 为 bugfix、refactor、review、feature 分别准备模板。
+- done-when 应该写成可观察、可测试、可验收的条件，而不是“功能完成”。
 
 # 最佳实践
 - 明确“不要改什么”。
@@ -32,12 +33,14 @@ tags: [codex, prompts, examples, validation]
 # 适合加入网站的位置
 - “Prompt 写法”教程页。
 - “模板与示例”资料页。
+- “Codex done-when 任务模板”可作为复杂任务的复制底座。
 
 # 双向链接
 - 见 [Codex Workflows](./codex-workflows.md)
 - 见 [Codex CLI First Steps](./codex-cli-first-steps.md)
 - 见 [Codex Slash Commands](./codex-slash-commands.md)
 - 见 [Prompt Patterns Research](../research/prompt-patterns.md)
+- 见 [Codex done-when 任务模板](/prompts/prompt-done-when-task)
 
 # Prompt 示例
 ```text
